@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace EnrolmentSystem;
 
-public class Student {
+public class Student : IComparable {
     public uint IdNumber { get; }
 
     public Name Name { get; }
@@ -19,5 +19,21 @@ public class Student {
     public override string ToString()
     {
         return $"{Name},{EmailAddress}";
+    }
+
+    public int CompareTo(object? obj)
+    {
+        if ( obj is Student other ) {
+            int result = this.Name.CompareTo(other.Name);
+
+            if ( result == 0 ) {
+                result = this.IdNumber.CompareTo(other.IdNumber);
+            }
+
+            return result;
+        }
+        else {
+            return +1;
+        }
     }
 }

@@ -16,7 +16,7 @@ Menu mainMenu = new Menu( "", "", "Main Menu",
         new MenuItem("C", "Option C"),
         new ExitMenuItem("D", "Go back to previous menu")
     ),
-    new MenuItem("3", "Option 3"),
+    new ListEnrolledStudents("3", "List Enrolled Students", enrolments.Students),
     new MenuItem("4", "Option 4"),
     new MenuItem("5", "Option 5"),
     new ExitMenuItem("6", "Exit")
